@@ -24,9 +24,9 @@
         <h3><label for="clientID">
             Client:
         </label></h3>
-        <select name="clientID" id="customerid"  aria-label="customerID">
+        <select name="clientID" id="clientID"  aria-label="clientID">
             {% for client in clients %}
-                <option value={{customer.customerId}}>{{customer.customerName}}</option>
+                <option value={{client.id}}>{{client.name}}</option>
             {% endfor %}
         </select>
     </br></br>
