@@ -1,0 +1,20 @@
+{
+    "defaults" : {
+        "useIncognitoBrowserContext": false
+    },
+    "urls": [
+        {
+            "url": "http://localhost:3000",
+            "actions": [
+                "navigate to http://localhost:3000/loginForm",
+                "set field #username to admin",
+                "set field #password to admin",
+                "click element #submit",
+                "wait for path to be /home"
+            ]
+        },
+        "http://localhost:3000/home",
+        "http://localhost:3000/loginForm"
+    ]
+
+}
