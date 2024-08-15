@@ -5,6 +5,9 @@ import session from "express-session";
 
 import { getAllDatabases } from "./controllers/TestController";
 import { getLoginForm,postLoginForm } from "./controllers/AuthController";
+import { getCreateProjectForm, postCreateProjectForm } from "./controllers/ProjectController";
+import { allowRoles } from "./middleware/AuthMiddleware";
+import { UserRole } from "./models/JwtToken";
 
 const app = express();
 
@@ -34,3 +37,5 @@ app.listen(3000, () => {
 
 app.get('/loginForm', getLoginForm);
 app.post('/loginForm', postLoginForm);
+app.get('/createProject', allowRoles([UserRole.Admin, UserRole.Management]), getCreateProjectForm);
+app.post('/createProject', allowRoles([UserRole.Admin, UserRole.Management]), postCreateProjectForm);
