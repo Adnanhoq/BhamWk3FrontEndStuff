@@ -1,10 +1,11 @@
-import { error } from "console";
 
-export const validateLogin = async (username: String, password: String) => {
+import { LoginRequest } from "../models/LoginRequest";
+
+export const validateLogin = (username: String, password: String) => {
         if(username.length > 64 || username.length == 0 ){
-            throw error;
+            throw new Error("username not valid");
         }
         if(password.length > 64 || password.length == 0 ){
-            throw error;
+            throw new Error("password not valid");
         } 
 }

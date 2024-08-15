@@ -10,7 +10,7 @@ export const postLoginForm = async (req: express.Request, res: express.Response)
         req.session.token = await getToken(req.body, req.session.token);
         res.redirect('/home.html');
     } catch (e) {
-        res.locals.errormessage = e.message;
+        res.locals.errormessage = "Username or password not valid";
         res.render('loginForm.html', req.body);
     }
 }
