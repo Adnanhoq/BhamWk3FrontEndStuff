@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+
+        {% if errormessage %}
+            <h3>{{ errormessage }}</h3>
+        {% endif %}
+
+        <form class="form" action="/loginForm" method="post">
+            <h3><label for="username">
+                Username:
+            </label></h3>
+            <input type="text" name="username" id="username" value="{{User.username}}">
+
+            <h3><label for="password">
+                Password:
+            </label></h3>
+            <input type="password" name="password" id="password" value="{{User.password}}">
+
+            <br></br>
+
+            <button id="submit">Submit</button>
+        </form>
+    </body>
+</html>
