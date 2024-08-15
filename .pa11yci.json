@@ -14,7 +14,8 @@
             ]
         },
         "http://localhost:3000/home",
-        "http://localhost:3000/loginForm"
+        "http://localhost:3000/loginForm",
+        "http://localhost:3000/createProject"
     ]
 
 }
